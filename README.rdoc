@@ -1,7 +1,3 @@
-== Yo dude
-
-Some of this info and great stuff has been taken from the awesome @rbates http://github.com/ryanb
-
 == Install
 
 Once Rails has been fixed to allow https URIs to be supplied for rails templates you can add this function to your bash profile, zshrc or what ever:
