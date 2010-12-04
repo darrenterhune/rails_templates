@@ -1,8 +1,8 @@
-h1. Yo dude
+== Yo dude
 
 Some of this info and great stuff has been taken from the awesome @rbates http://github.com/ryanb
 
-h1. Install
+== Install
 
 To use these generator templates add this function to your bash profile, zshrc or what ever.
 
@@ -13,7 +13,7 @@ To use these generator templates add this function to your bash profile, zshrc o
     rails $appname -m http://github.com/darrenterhune/rails_templates/raw/master/$template.rb $@
   }
 
-h1. Just run it now!
+== Just run it now!
 
 You can then use this "railsapp" command instead of the traditional "rails" one by passing the template then the app as arguments:
 
@@ -21,7 +21,7 @@ You can then use this "railsapp" command instead of the traditional "rails" one 
 
 That will generate a Rails app using the base.rb template found here. More templates to come...
 
-h1. Copyright notice
+== Copyright notice
 
 Copyright (c) 2010 Darren Terhune
  
