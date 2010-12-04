@@ -4,22 +4,56 @@ Some of this info and great stuff has been taken from the awesome @rbates http:/
 
 == Install
 
-To use these generator templates add this function to your bash profile, zshrc or what ever.
+Once Rails has been fixed to allow https URIs to be supplied for rails templates you can add this function to your bash profile, zshrc or what ever:
+
+Looks like 3.0.4: https://rails.lighthouseapp.com/projects/8994/tickets/5926-bug-patch-allow-https-uris-to-be-supplied-for-rails-templates
 
   function railsapp {
     template=$1
     appname=$2
     shift 2
-    rails $appname -m http://github.com/darrenterhune/rails_templates/raw/master/$template.rb $@
+    rails $appname -m https://github.com/darrenterhune/rails_templates/raw/master/$template.rb $@
   }
+
+For now you will have to clone or download these templates to get them to work.
 
 == Just run it now!
 
 You can then use this "railsapp" command instead of the traditional "rails" one by passing the template then the app as arguments:
 
+After Rails has been fixed:
+
   railsapp base appname
+	railsapp cssgrid appname
+
+Before Rails has been fixed:
+
+You first need to clone this repository or download these templates, then you can run:
+
+	rails appname -m /Users/path/to/base.rb
+	rails appname -m /Users/path/to/cssgrid.rb
 
 That will generate a Rails app using the base.rb template found here. More templates to come...
+
+== What does it do?
+
+base.rb
+
+ 1. Creates README.rdoc (with default info for our system - change to your liking)
+ 2. Removes public/index.html
+ 3. Removes prototype javascript cause we like jquery better
+ 4. Sets up basic app/views/layouts/application.html.erb file
+ 5. Creates config/initializers/load_config.rb to load up the app config.yml file
+ 6. Asks a bunch of app specific questions like what gems, plugins, configurations you would like
+ 7. Capifies your app for deployment with dreamhost if wanted
+ 8. Sets up git and commits initial commits
+ 9. Sets up restul-authentication if you want
+
+cssgrid.rb
+
+ 1. Does everything base.rb does above if wanted otherwise just installs cssgrid 
+ 2. Downloads http://cssgrid.net extracts, moves files and cleans up archive and files
+ 3. Ask some questions and sets up the default app/views/layouts/application.html.erb file
 
 == Copyright notice
 
