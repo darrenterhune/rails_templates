@@ -49,13 +49,27 @@ cssgrid.rb http://cssgrid.net by @andytlr
 
  1. Does everything base.rb does above if wanted otherwise just installs cssgrid 
  2. Downloads http://cssgrid.net extracts, moves files and cleans up archive and files
- 3. Ask some questions and sets up the default app/views/layouts/application.html.erb file
+ 3. Asks some questions and sets up the default app/views/layouts/application.html.erb file
+
+If you use cssgrid.rb you must attribute the author: @andytlr http://cssgrid.net
+
+boilerplate.rb http://html5boilerplate.com/ @paul_irish
+
+ 1. Does everthing base.rb does above if wanted otherwise just installs boilerplate
+ 2. Clones https://github.com/paulirish/html5-boilerplate
+ 3. Asks some questions and sets up the default app/views/layouts/application.html.erb file
+
+jquery.rb
+
+ 1. Removes prototype but asks first!
+ 2. Fetches latest jQuery and installs it
+ 3. Commits the changes if you have git and are tracking your app
 
 == Contributors
 
-People who have done, written or helped this project: 
+These people have either a) helped b) I'm using their badass html/css template code: 
 
-Andy Taylor, Ryan Bates
+Andy Taylor, Ryan Bates, Paul Irish
 
 == Copyright and License
 
