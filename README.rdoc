@@ -28,8 +28,8 @@ You first need to clone this repository or download these templates, then you ca
 
  rails appname -m /Users/path/to/base.rb
  rails appname -m /Users/path/to/cssgrid.rb
-
-That will generate a Rails app using the base.rb template found here. More templates to come...
+ rails appname -m /Users/path/to/boilerplate.rb
+ rails appname -m /Users/path/to/jquery.rb
 
 == What does it do?
 
@@ -56,7 +56,7 @@ If you use cssgrid.rb you must attribute the author: @andytlr http://cssgrid.net
 boilerplate.rb http://html5boilerplate.com/ @paul_irish
 
  1. Does everthing base.rb does above if wanted otherwise just installs boilerplate
- 2. Clones https://github.com/paulirish/html5-boilerplate
+ 2. Clones https://github.com/paulirish/html5-boilerplate, moves files and cleans up repos and files
  3. Asks some questions and sets up the default app/views/layouts/application.html.erb file
 
 jquery.rb
