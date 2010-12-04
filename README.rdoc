@@ -8,12 +8,12 @@ Once Rails has been fixed to allow https URIs to be supplied for rails templates
 
 Looks like 3.0.4: https://rails.lighthouseapp.com/projects/8994/tickets/5926-bug-patch-allow-https-uris-to-be-supplied-for-rails-templates
 
-  function railsapp {
-    template=$1
-    appname=$2
-    shift 2
-    rails $appname -m https://github.com/darrenterhune/rails_templates/raw/master/$template.rb $@
-  }
+ function railsapp {
+   template=$1
+   appname=$2
+   shift 2
+   rails $appname -m https://github.com/darrenterhune/rails_templates/raw/master/$template.rb $@
+ }
 
 For now you will have to clone or download these templates to get them to work.
 
@@ -23,15 +23,17 @@ You can then use this "railsapp" command instead of the traditional "rails" one 
 
 After Rails has been fixed:
 
-  railsapp base appname
-	railsapp cssgrid appname
+ railsapp base appname
+
+ railsapp cssgrid appname
 
 Before Rails has been fixed:
 
 You first need to clone this repository or download these templates, then you can run:
 
-	rails appname -m /Users/path/to/base.rb
-	rails appname -m /Users/path/to/cssgrid.rb
+ rails appname -m /Users/path/to/base.rb
+
+ rails appname -m /Users/path/to/cssgrid.rb
 
 That will generate a Rails app using the base.rb template found here. More templates to come...
 
