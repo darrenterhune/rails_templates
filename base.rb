@@ -153,7 +153,7 @@ puts "Capification...."
 
 run "capify ."
 
-if yes?("Do you want to setup general deploy configs? (Dreamhost only)")
+if yes?("Do you want to setup general deploy configs?")
   
 user = ask("What is the user this app will be deployed to?")
 servername = ask("What is the name of the server? eg: bluebird.dreamhost.com")
@@ -181,8 +181,8 @@ namespace :deploy do
 
   desc "Tell Passenger to restart."
   task :restart, :roles => :web do
-    run "cd deployto/current && RAILS_ENV=production rake db:migrate"
-    run "touch deployto/current/tmp/restart.txt" 
+    run "cd #{deploy_to}/current && RAILS_ENV=production rake db:migrate"
+    run "touch #{deploy_to}/current/tmp/restart.txt" 
   end
 
   desc "Do nothing on startup so we don't get a script/spin error."
@@ -192,8 +192,8 @@ namespace :deploy do
 
   desc "Remove all cached files from server"
   task :remove_cache, :roles => :web do
-    run "rm -rf deployto/current/public/sitemap.xml"
-    run "rm -rf deployto/current/public/index.html"
+    run "rm -rf #{deploy_to}/current/public/sitemap.xml"
+    run "rm -rf #{deploy_to}/current/public/index.html"
     puts "cache removed!"
   end
 
@@ -232,7 +232,7 @@ if yes?("Do you want restful-authentication?")
   
   plugin "restul-authentication", :git => "git://github.com/technoweenie/restful-authentication.git"
   
-  if yes?("Are you running Rails 2.3.8+?")
+  if yes?("Are you running Rails 2.3.8+? Cause if ya are we'll move rake tasks to their proper position.")
     puts "Moving restful-authentication tasks to lib..."
     run "mv vendor/plugins/restful-authentication/tasks/auth.rake* lib/tasks/auth.rake"
     run "rm -rf vendor/plugins/restful-authentication/tasks"
