@@ -24,4 +24,4 @@ run "rm -rf html5-boilerplate"
 puts "You will want to add icons for ipad, iphone, itouch and browsers:"
 puts "114x114 - public/apple-touch-icon.png"
 
-puts "Boiler plate template applied..."
+puts "Boiler plate template applied!"
